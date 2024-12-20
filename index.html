@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=devic-width,initial-scale=1.0">
+			<title>个人博客</title>
+	</head>
+	<link rel="stylesheet" href="icon/iconfont.css">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			text-decoration: none;
+		}
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+		ul {
+			list-style: none;
+		}
+		header{
+			font-size: 15px;
+			font-family: "微软雅黑";
+			height: 60px;
+			width: 1524px;
+			background-color: #022f43;
+		}
+		nav{
+			background-image:url(img/大海);/*背景图像*/
+			width: 1524px;
+			height: 600px;
+			background-repeat: no-repeat;/*如何平铺背景图像*/
+			background-size: 100% auto;
+			}
+		main{
+			width: 1524px;
+			height: 1000px;
+			background-color: #011f2c;
+		}
+		h2{
+			display: block;
+			font-size: 30px;
+			font-weight: bold;
+			color: #FCFCFE;
+			margin-left: 470px;
+			margin-top: 25px;
+		}
+		.top{
+			font-size: 25px;
+			display: block;
+			line-height: 60px;
+			color: #ffa500;
+			padding:0 20px;
+			float: left;
+		}
+		.search{
+			font-size: 20px;
+			display: block;
+			margin-top: 15px;
+			background-color: #fff;
+			float: left;
+			border-radius: 50px;
+			margin-left: 550px;
+		}
+		.search-bth{
+			color: #022f43;
+			float: right;
+			width: 30px;
+			height: 30px;
+			margin-left: -10px;
+			border-radius: 50%;
+			background: #ffa500;
+			display: flex;
+			justify-content: center;
+		}
+		.search-bth i{
+			margin-top: 7px;
+		}
+		.search-txt{
+			border: none;
+			background: none;
+			outline: none;
+			float: left;
+			padding: 0;
+			font-size: 14px;
+			margin-top: 7px;
+			margin-left: 10px;
+			transition: 0.5s;
+			width: 0px;
+		}
+		.search:hover > .search-txt{
+			width: 174.4px;
+		}
+		.search:hover > .search-bth{
+			background: #ffa500;
+			transform: 0.4s;
+		}
+		.tophead{
+			margin-right: 20px;
+
+		}
+		.tophead li{
+			float: right;
+		}
+		.tophead li a {
+			display: block;
+			line-height: 60px;
+			text-decoration: underline;
+			color: #fff;
+			padding: 0 25px;
+		}
+		.music-wrap {
+			float: right;
+			margin-top: 600px;
+			margin-left: 1213px;
+			position: fixed;
+			z-index: 10;
+		}
+		.shell{
+			width: 70px;
+			height: 450px;
+			display: flex;/*展示*/ /*弹性分布*/
+			flex-direction: column;/*弹性项目在弹性容器中的放置方向*/
+			background-color:rgb(0,0,0,0.5);
+			border-radius: 10px;/*圆角矩形边框*/
+			transition: 0.5s ease;/*过渡*/
+			overflow: hidden;/*隐藏超出部分*/
+			float: left;
+			position: fixed;
+		}
+		.box{
+			display: block;/*展示*/ /*块元素显示*/
+			height: 600px;
+			width: 100px;
+			margin: 5px;
+			border-radius: 5px;
+			position: relative;/*相对定位*/  /*父相*/
+			transition: 1s;/*过渡*/
+			color: rbg(160,160,175);
+		}
+		.box i{
+			font-size: 30px;
+			position: absolute;/*绝对位置*/  /*子绝*/
+			margin: 24px 0 0 15px;
+		}
+		.box span{
+			position: relative;/*相对定位*/  /*父相*/
+			top: 22px;
+			left: 80px;
+			font: 500 20px '';
+			border-bottom: 1px solid #fff;
+			opacity: 0;
+			transition: .1s;
+		}
+		.text {
+			font-size: 30px;
+			width: 100%;
+			background-color: transparent;
+			line-height: 100px;
+			text-align: center;
+			overflow: hidden;
+			color: #fff;
+			float: left;
+			margin-top: 100px;
+			}
+		.text a {
+			font-size: 20px;
+			display: inline-block;
+			height: 40px;
+			line-height: 39px;
+			padding: 0 55px 0 20px;
+			border-radius: 15px;
+			border: 2px solid white;
+			cursor: pointer;
+			transition:transform .3s ease;
+			color: #fcfcfe;
+			position: relative;
+		}
+		.text a::after{
+			position: absolute;
+			right: 23px;
+			top: 40%;
+			content: '';
+			border-top: 6px solid transparent;
+			border-left: 12px solid #fff;
+			border-bottom: 6px solid transparent;
+			transition: .5s;
+		}
+		.kuang{
+			width: 1050px;
+			height: 900px;
+			background-color: #022f43;
+			margin-left: 252px;
+			border-radius: 15px;
+		}
+		.kuang img{
+			margin-left: 425px;
+			margin-top: 100px;
+			border: solid 3px #FCFCFE;
+			border-radius: 50%;
+		}
+		.status{
+			height: 30px;
+			width: 30px;
+			border-radius: 50%;
+			position: absolute;
+			border: solid 3px #FCFCFE;
+			background-color: #ffa500;
+			overflow: hidden;
+			margin-top: 220px;
+			margin-left: 540px;
+			color: #fff;
+			margin-right: 250px
+		}
+		.kuang span i{
+			font-size: 18px;
+			margin-left: 5px;
+		}
+		.zuoyouming {
+			display: block;
+			font-size: 20px;
+			font-weight: bold;
+			color: #FCFCFE;
+			margin-left: 385px;
+			margin-top: 38px;
+		}
+		.fenggexian {
+			border-bottom: 1px dashed rgb(187, 185, 185);
+			width: 900px;
+			margin-top: 60px;
+			margin-left: 75px;
+		}
+		.news p{
+			display: block;
+			font-size: 20px;
+			font-weight: bold;
+			color: #FCFCFE;
+			line-height: 10px;
+			margin-top: 60px;
+			margin-left: 75px;
+			display: flex;
+			justify-content: space-between;
+		}
+		#news p span{
+			color: gray;	
+			margin-right: 75px;
+		}
+		.botton{
+			position: absolute;
+			font-size: 25px;
+			font-weight: bold;
+			margin-top: 70px;
+			margin-left: 425px;
+			width: 150px;
+			height: 40px;
+			text-align: center;
+			color: #fff;
+			font-family: sans-serif;
+			box-sizing: border-box;
+			background: linear-gradient(-45deg,#ffa500 50%,#fff 60%,#ffa500 70%);
+			background-size: 600% 100%;
+			border-radius: 30px;
+			animation: animate 4s infinite;
+			transition: 0.5s;
+			z-index: 1;
+		}
+		@keyframes animate{
+			from{
+				background-position: 0%;
+			}
+			to{
+				background-position: 100%;
+			}
+		}
+		.shell:hover{
+			width: 250px;
+		}
+		.shell:hover span{
+			opacity: 1;
+		}
+		.box:hover{
+			color: #ffa500;
+		}
+		.text a:hover{
+			transform: scale(1.25);
+			z-index: 1;
+		}
+		.botton:hover{
+			transform: scale(1.20);
+			z-index: 1;
+			animation: animate 4s linear infinite;
+		}
+		.botton::before{
+			content: '';
+			position: absolute;
+			inset: -5px;
+			z-index: 1;
+			border-radius: 30px;
+			opacity: 0;
+		}
+		.botton:hover::before{
+			filter: blur(20px);
+			opacity: 1;
+			animation: animate 4s linear infinite;
+		}
+	</style>
+	<body>
+		<header>
+			<div class="top">
+				<p id="p1">&nbsp;&nbsp;&nbsp;Welcome&nbsp;&nbsp;To&nbsp;&nbsp;My&nbsp;&nbsp;Blog</p>
+			</div>
+			<div class="tophead">
+				<ul>
+					<li><a href="#">手机版</a></li>
+					<li><a href="#">收藏本站</a></li>
+				</ul>
+			</div>
+			<div class="search">
+				<input class="search-txt" type="text" placeholder="Type to  search"/>
+				<a class="search-bth" href="#"><i class="iconfont icon-sousuo"></i></a>
+			</div>
+		</header>
+		<nav>
+			<div class="shell">
+				<a href="首页.html" class="box"><i class="iconfont icon-shouye" ></i><span>homepage</span></a>
+				<a href="技能.html" class="box"><i class="iconfont icon-jingyan"></i><span>skill</span></a>
+				<a href="联系.html" class="box"><i class="iconfont icon-lianxi"></i><span>contact</span></a>
+				
+			</div>
+			<div class="text">
+				<h1>
+					HI MY NEW FRIEND!
+					<br />Hello
+					<br />I'm Wang Jing
+				</h1>
+				<a href="技能.html">了解一下</a>
+			</div>
+			<div class="music-wrap" id="musicwrap">
+					<audio id="play1" controls>
+						<source src="img/风之海伴奏.mp3" />
+					</audio>
+			</div>
+		</nav>
+		<main>
+			<div class="kuang" id="kuang">
+				<span class="status">
+					<i>婧</i>
+				</span>
+			<img src="img/头像2.jpg"  width="150" height="150"/>
+			<h2> 王婧</h2>
+			<p class="zuoyouming" id="zuoyouming">
+				其实，我的心愿是世界和平！
+			</p>
+			<div class="fenggexian" id="fengexian"></div>
+			<div class="news" id="news">
+					<p>学校<span>成都锦城学院</span></p>
+					<p>所在城市<span>四川&nbsp;&nbsp;成都</span></p>
+					<p>专业<span>数字媒体技术</span></p>
+			</div>
+			<div class="fenggexian" id="fengexian"></div>
+			<div class="lianxiwo">
+				<a class="botton" href="./联系.html">联系我</a>
+			</div>
+			</div>
+		</main>
+	</body>
+</html>

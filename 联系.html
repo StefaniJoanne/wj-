@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=devic-width,initial-scale=1.0">
+			<title>个人博客</title>
+	</head>
+	<link rel="stylesheet" href="icon/iconfont.css">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			text-decoration: none;
+		}
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+		ul {
+			list-style: none;
+		}
+		header{
+			font-size: 15px;
+			font-family: "微软雅黑";
+			height: 60px;
+			width: 1524px;
+			background-color: #022f43;
+		}
+		nav{
+			background-image:url(img/大海);/*背景图像*/
+			width: 1524px;
+			height: 600px;
+			background-repeat: no-repeat;/*如何平铺背景图像*/
+			background-size: 100% auto;
+			}
+		main{
+			width: 1524px;
+			height: 1200px;
+			background-color: #011f2c;
+		}
+		h2{
+			display: block;
+			font-size: 20px;
+			font-weight: bold;
+			color: #FCFCFE;
+			margin-left: 455px;
+			margin-top: 25px;
+		}
+		.top{
+			font-size: 25px;
+			display: block;
+			line-height: 60px;
+			color: #ffa500;
+			padding:0 20px;
+			float: left;
+		}
+		.tophead{
+			float: right;
+		}
+		.tophead li{
+			float: left;
+		}
+		.tophead li a {
+			display: block;
+			line-height: 60px;
+			text-decoration: underline;
+			color: #fff;
+			padding: 0 25px;
+		}
+		.music-wrap {
+			float: right;
+			margin-top: 600px;
+			margin-left: 1213px;
+			position: fixed;
+			z-index: 10;
+		}
+		.shell{
+			width: 70px;
+			height: 450px;
+			display: flex;/*展示*/ /*弹性分布*/
+			flex-direction: column;/*弹性项目在弹性容器中的放置方向*/
+			background-color:rgb(0,0,0,0.5);
+			border-radius: 10px;/*圆角矩形边框*/
+			transition: 0.5s ease;/*过渡*/
+			overflow: hidden;/*隐藏超出部分*/
+			float: left;
+			position: fixed;
+		}
+		.box{
+			display: block;/*展示*/ /*块元素显示*/
+			height: 600px;
+			width: 100px;
+			margin: 5px;
+			border-radius: 5px;
+			position: relative;/*相对定位*/  /*父相*/
+			transition: 1s;/*过渡*/
+			color: rbg(160,160,175);
+		}
+		.box i{
+			font-size: 30px;
+			position: absolute;/*绝对位置*/  /*子绝*/
+			margin: 24px 0 0 15px;
+		}
+		.box span{
+			position: relative;/*相对定位*/  /*父相*/
+			top: 22px;
+			left: 80px;
+			font: 500 20px '';
+			border-bottom: 1px solid #fff;
+			opacity: 0;
+			transition: .1s;
+		}
+		.text {
+			font-size: 30px;
+			width: 100%;
+			background-color: transparent;
+			line-height: 100px;
+			text-align: center;
+			overflow: hidden;
+			color: #fff;
+			float: left;
+			margin-top: 100px;
+			}
+		.text a {
+			font-size: 20px;
+			display: inline-block;
+			height: 40px;
+			line-height: 39px;
+			padding: 0 55px 0 20px;
+			border-radius: 15px;
+			border: 2px solid white;
+			cursor: pointer;
+			transition:transform .3s ease;
+			color: #fcfcfe;
+			position: relative;
+		}
+		.kuang1{
+			width: 300px;
+			height: 260px;
+			background-color: #022f43;
+			margin-top: 50px;
+			margin-left: 250px;
+			border-radius: 30px;
+			position: absolute;
+		}
+		.kuang2{
+			width: 300px;
+			height: 260px;
+			background-color: #022f43;
+			margin-top: 50px;
+			margin-left: 600px;
+			border-radius: 30px;
+			position: absolute;
+		}
+		.kuang3{
+			width: 300px;
+			height: 260px;
+			background-color: #022f43;
+			margin-top: 50px;
+			margin-left: 950px;
+			border-radius: 30px;
+			position: absolute;
+		}
+		.kuang1 i{
+			font-size: 60px;
+			color: #fff;
+			position: absolute;
+			margin-top: 25px;
+			margin-left: 40px;
+		}
+		.kuang1 p{
+			font-size: 18px;
+			color: #fff;
+			line-height: 30px;
+			position: absolute;
+			margin-top: 105px;
+			margin-left: 40px;
+		}
+		.kuang2 i{
+			font-size: 60px;
+			color: #fff;
+			position: absolute;
+			margin-top: 25px;
+			margin-left: 40px;
+		}
+		.kuang2 p{
+			font-size: 18px;
+			color: #fff;
+			line-height: 30px;
+			position: absolute;
+			margin-top: 105px;
+			margin-left: 40px;
+		}
+		.kuang3 i{
+			font-size: 60px;
+			color: #fff;
+			position: absolute;
+			margin-top: 25px;
+			margin-left: 40px;
+		}
+		.kuang3 p{
+			font-size: 18px;
+			color: #fff;
+			line-height: 30px;
+			position: absolute;
+			margin-top: 105px;
+			margin-left: 40px;
+		}
+		.fenggexian {
+			border-bottom: 1px dashed rgb(187, 185, 185);
+			width: 780px;
+			margin-top: -60px;
+			margin-left: 135px;
+		}
+		.kuang4{
+			width: 1000px;
+			height: 500px;
+			background-color: #022f43;
+			margin-top: 450px;
+			margin-left: 250px;
+			border-radius: 30px;
+			position: absolute;
+		}
+		.kuang4 p{
+			font-size: 20px;
+			color: #fff;
+			margin-left: 15px;
+			margin-top: -17px;
+		}
+		.kuang4 p span{
+			font-size: 25px;
+			float: right;
+			margin-right: 15px;
+			margin-top: -5px;
+		}
+		input[type=xing]{
+			width: 800px;
+			height: 40px;
+			padding-left: 40px;
+			margin-left: 75px;
+			margin-top: 100px;
+			border-radius: 15px;
+			font-size: 15px;
+			background-color: #fff;
+		}
+		input[type=you]{
+			width: 800px;
+			height: 40px;
+			padding-left: 40px;
+			margin-left: 75px;
+			margin-top: 20px;
+			border-radius: 15px;
+			font-size: 15px;
+			background-color: #fff;
+		}
+		input[type=xin]{
+			width: 800px;
+			height: 200px;
+			padding-left: 40px;
+			margin-left: 75px;
+			margin-top: 20px;
+			border-radius: 15px;
+			font-size: 15px;
+			background-color: #fff;
+		}
+		input[type=lian]{
+			background-color: #ffa500;
+			width: 80px;
+			height: 40px;
+			padding-left: 30px;
+			margin-left: 75px;
+			margin-top: 40px;
+			border-radius: 15px;
+			color: #fff;
+			font-size: 16px;
+			cursor: pointer;
+			transition:transform .3s ease;
+		}
+		.kuang5{
+			width: 1000px;
+			height: 80px;
+			background-color: #022f43;
+			margin-top: 1000px;
+			margin-left: 250px;
+			border-radius: 30px;
+			position: absolute;
+		}
+		.kuang5 p{
+			font-size: 20px;
+			margin-left: 40px;
+			margin-top: 25px;
+			color: gray;
+			z-index: 10;
+		}
+		input[type=lian]:hover{
+			transform: scale(1.1);
+		}
+		.text a::after{
+			position: absolute;
+			right: 23px;
+			top: 40%;
+			content: '';
+			border-top: 6px solid transparent;
+			border-left: 12px solid #fff;
+			border-bottom: 6px solid transparent;
+			transition: .5s;
+		}
+		.shell:hover{
+			width: 250px;
+		}
+		.shell:hover span{
+			opacity: 1;
+		}
+		.box:hover{
+			color: #ffa500;
+		}
+		.text a:hover{
+			transform: scale(1.25);
+			z-index: 1;
+		}
+	</style>
+	<body>
+		<header>
+			<div class="top">
+				<p id="p1">&nbsp;&nbsp;&nbsp;Welcome&nbsp;&nbsp;To&nbsp;&nbsp;My&nbsp;&nbsp;Ending&nbsp;&nbsp;Works&nbsp;&nbsp;Show</p>
+			</div>
+			<div class="tophead">
+				<ul>
+					<li><a href="#">手机版</a></li>
+					<li><a href="#">收藏本站</a></li>
+				</ul>
+			</div>
+		</header>
+		<nav>
+			<div class="shell">
+				<a href="index.html" class="box"><i class="iconfont icon-shouye" ></i><span>homepage</span></a>
+				<a href="技能.html" class="box"><i class="iconfont icon-jingyan"></i><span>skill</span></a>
+				<a href="联系.html" class="box"><i class="iconfont icon-lianxi"></i><span>contact</span></a>
+				
+			</div>
+			<div class="text">
+				<h1>
+					CONTACT!
+					<br />Action speak louder than
+					<br />Words.
+				</h1>
+				<a href="index.html">回到首页</a>
+			</div>
+			<div class="music-wrap" id="musicwrap">
+					<audio id="play1" controls>
+						<source src="img/风之海伴奏.mp3" />
+					</audio>
+			</div>
+		</nav>
+		<main>
+			<div class="kuang1" id="kuang1">
+				<i class="iconfont icon-weixin"></i>
+				<p id="p2">WECHAT
+					<br /><br />wechat:&nbsp;&nbsp;WJ383496
+				<br />wechat:&nbsp;&nbsp;WJ383496</p>
+			</div>
+			<div class="kuang2" id="kuang2">
+				<i class="iconfont icon-qq"></i>
+					<p id="p2">QICQ
+						<br /><br />qicq:&nbsp;&nbsp;1111111111
+					<br />qicq:&nbsp;&nbsp;1111111111</p>
+			</div>
+			<div class="kuang3" id="kuang3">
+				<i class="iconfont icon-xinlangweibo"></i>
+					<p id="p2">WEIBO
+						<br /><br />weibo:&nbsp;&nbsp;111111111
+					<br />weibo:&nbsp;&nbsp;111111111</p>
+			</div>
+			<div class="kuang4" id="kuang4">
+				<div class="fenggexian" id="fengexian"></div>
+				<p>联系我<span>02</span></p>
+					<input type="xing" placeholder="Name" />
+					<br />
+					<input type="you" placeholder="Email"/>
+					<br />
+					<input type="xin" placeholder="Messary"/>
+					<br />
+					<input type="lian" value="联系我"/>
+				</div>
+				<div class="kuang5" id="kuang5">
+					<p id="2023">
+						@2024&nbsp;&nbsp;WTTANDROID
+					</p>
+				</div>
+		</main>
+	</body>
+</html>
